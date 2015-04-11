@@ -1,0 +1,30 @@
+@body: #ccc;
+@wrapper: lighten(@body, 10%);
+@article: @wrapper;
+@header: lighten(@body, 5%);
+
+body,html{
+	background: @body;
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper{
+	background: @wrapper;
+	width: 960px;
+	display: flex;
+	margin: 0 auto;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+header{
+	background: @header;
+	padding: 1em;
+}
+
+article{
+	background: @article;
+	padding: 1em 3em 1em 3em;
+	flex: 1;
+}
