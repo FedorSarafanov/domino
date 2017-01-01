@@ -1,0 +1,6 @@
+
+.icon-linux:before { content: '\41'; } /* 'A' */
+.icon-home:before { content: '\42'; } /* 'B' */
+.icon-latex:before { content: '\43'; } /* 'C' */
+.icon-lab:before { content: '\44'; } /* 'D' */
+.icon-problem:before { content: '\45'; } /* 'E' */
