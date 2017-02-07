@@ -1,130 +1,81 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>	
-	<link rel="stylesheet" href="css/gross.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
-</head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Математическая игра</title>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="https://jashkenas.github.io/underscore/underscore-min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+<!-- <link rel="stylesheet/css" type="text/css" href="style.css" /> -->
+<link rel="stylesheet" type="text/css" href="css/style.min.css"> 
+  </head>
 <body>
-		<!-- <img id="holder" src="img/phys.jpeg" alt=""> -->
-		<div id="holder">
-			<div id="title">
-				<div>Технический блог</div>
-				<div class="info">Сарафанов Ф.Г. aka <a class='nick' href="#">osabio</a></div>
-				<a class='button-read' href="#">Приступить к чтению</a>
-			</div>
-		</div>
-		<nav id="foot-nav">
-			<ul>
-				<li id="home">
-					<a href="#">
-					<span class="icon">B</span>
-						Главная
-					</a>
-				</li>
-				<li id="problems">
-					<a href="#">
-					<span class="icon">C</span>
-						Задачи
-					</a>
-				</li>
-				<li id="latex">
-					<a href="#">
-					<span class="icon">E</span>
-						Latex
-					</a>
-				</li>
-				<li id="linux">
-					<a href="#">
-					<span class="icon">A</span>
-						linux
-					</a>
-				</li>
-				<li id="lab">
-					<a href="#">
-					<span class="icon">D</span>
-						Лабораторные
-					</a>
-				</li>
-			</ul>
-		</nav>
-		<!-- <header> -->
-		<!-- </header> -->
-	<section id="wrapper">
-		<div class="problems">
-			<a class="problem" href="img_ex/91-0.jpg"  alt="Яковлев №91">
-				<img src="img_ex/91-0.jpg" alt="Яковлев №91"> 
-			</a>
-			<a class="problem" href="img_ex/91-1.jpg" id="91" alt="Яковлев №91">
-				<img src="img_ex/91-1.jpg" alt="Яковлев №91">
-			</a>
-			<a class="problem" href="img_ex/91-0.jpg"  alt="Яковлев №91">
-				<img src="img_ex/91-0.jpg" alt="Яковлев №91"> 
-			</a>
-			<a class="problem" href="img_ex/91-1.jpg" id="91" alt="Яковлев №91">
-				<img src="img_ex/91-1.jpg" alt="Яковлев №91">
-			</a>
-			<a class="problem" href="img_ex/91-0.jpg"  alt="Яковлев №91">
-				<img src="img_ex/91-0.jpg" alt="Яковлев №91"> 
-			</a>
-			<a class="problem" href="img_ex/91-1.jpg" id="91" alt="Яковлев №91">
-				<img src="img_ex/91-1.jpg" alt="Яковлев №91">
-			</a>
-		</div>
-		<article>	
+<!-- <div class="page create">
+    <div class="col">
+        <h1>Задачи</h1>
+    </div>
 
-	
-		<h1>Lorem</h1>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ea cum ipsam vero voluptate, placeat. Soluta, perferendis at necessitatibus veritatis iusto quam magnam ad, aut nam autem quod, inventore quos!
-		</article>
-	</section>
-	<footer>
-		<nav>
-			<ul>
-				<li><a href="#">Intro</a></li>
-				<li><a href="#">Location</a></li>
-				<li><a href="#">Stats</a></li>
-			</ul>
-		</nav>
-		<div class="copy">
-			&copy; 2011–2016 by F.Sarafanov. Все права защищены.
-			Запрещено коммерческое копирование материалов ресурса без письменного согласия владельца.
-		</div>
-	</footer>
-</body> 
-	<script>
-		var secondaryNav = $('#foot-nav'),
-		secondaryNavTopPosition = secondaryNav.offset().top;
-		$('.button-read').click(function(event) {
-			$.scrollTo(secondaryNavTopPosition, 400);
-		});
-		$(window).on('scroll', function(){
+</div>
+ --><div class="page peoples">
 
-			if($(window).scrollTop() > secondaryNavTopPosition ) {
-				secondaryNav.addClass('is-fixed');
-				// secondaryNavTopPosition = secondaryNav.offset().top;
-				// $("article").addClass('ar-fixed');
-				$('#wrapper').css("padding-top",$("#foot-nav").height())
-				setTimeout(function() {
-				    // secondaryNav.addClass('animate-children');
-				    // $('#cd-logo').addClass('slide-in');
-					// $('.cd-btn').addClass('slide-in');
-				}, 150);
-			} else {
-				secondaryNav.removeClass('is-fixed');
-				// secondaryNavTopPosition = secondaryNav.offset().top;
-				$('#wrapper').css("padding-top",0)
-				setTimeout(function() {
-				    // secondaryNav.removeClass('animate-children');
-				    // $('#cd-logo').removeClass('slide-in');
-					// $('.cd-btn').removeClass('slide-in');
-				}, 50);
-			}
-		});
-		$(window).resize(function(event) {
-			secondaryNavTopPosition = secondaryNav.offset().top;
-		});
-	</script>
+    <div class="col">
+    <h1>Добавить</h1>    
+        <div class="hor">
+            <div class="vert">
+                <input id="name" type="text" min="1" max="11" placeholder="Фамилия"><br>
+                <input id="class" type="number" min="1" max="11" placeholder="Класс"><br>
+            </div>     
+            <button id="add">+</button>
+        </div>
+
+    <br>
+    <h1>Количество задач</h1> 
+    <div class="hor"> 
+        <input id="class" type="number" min="1" max="20" placeholder="Введите кол-во"><br>          
+    </div>
+    </div>
+    <div class="col">
+    <h1>Участники</h1> 
+        <ul id="peoples">
+            <!-- <li><span>Князев</span> -->
+            <!-- <div class="remove">Удалить</div></li> -->
+        </ul> 
+        <div class="hr">            
+        <button id="create">Создать турнир</button>       
+        </div>
+    </div>    
+</div>
+<div class="page table">
+    <table>
+  <thead>
+    <tr>
+      <th rowspan="2">
+        <span>Место</span>
+      </th>
+      <th rowspan="2">
+        <span>Класс</span>
+      </th>
+      <th rowspan="2" id="cl">Игрок</th>
+      <th rowspan="2">
+        <span>Штраф</span>
+      </th>
+      <th id="problems" colspan="0">Задачи</th>
+      <th rowspan="2">
+        <span>Сумма</span>
+      </th>
+    </tr>
+    <tr>
+
+    </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+</table> 
+</div>
+
+</body>
+
+  <script src="main.js"></script>
 </html>
